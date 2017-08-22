@@ -14,10 +14,12 @@ online/share it around, rather than viewing just the diff.
 
 INSTALL:
 
-Place autonmap.sh in a directory. 
-Change the options at the top of the script (e.g. scan subnet(s), email recipient(s))
+Place autonmap.sh in /opt/autonmap. 
+Change the options at the top of the script (e.g. scan subnet(s), email recipient(s)).
+Change Mailserver.
+
 Add to cron using something like:
-    0 9 * * * /usr/local/autonmap/autonmap.sh >> /var/log/autonmap/autonmap.log 2>&1
+    0 9 * * * /opt/autonmap/autonmap.sh >> /var/log/autonmap/autonmap.log 2>&1
 
 AutoNmap will then run daily and if there any differences in the port state, it will
 email the diff to the specified recipients. The log file should contain some useful 
@@ -26,7 +28,5 @@ information in case debugging is required.
 
 WEB REPORT:
 
-AutoNmap will place a copy of the entire scan output in XML format in a directory
-you specify. This is useful when combined with the nmap.xsl XML stylesheet so you can
-get a full overview of the state of your network, updated daily. You could easily 
-"disable" this feature if you wanted by commenting out the copy step. 
+AutoNmap will place a copy of the entire scan output in HTML format in a directory
+you specify and include the link with the daily changes email.
