@@ -11,7 +11,7 @@ RUN_DIRECTORY="/opt/autonmap/"
 WEB_DIRECTORY="/var/www/html/"
 
 # The subnets you want to scan daily, space seperated.
-SCAN_SUBNETS="192.168.1.0/24 192.168.2.0/24"
+SCAN_SUBNETS="192.168.1.0/24 192.168.2.0/24 192.168.3.0/24"
 
 # The full path (http) to where the report will be hosted by your webserver. This is included in the email report.
 # I suggest setting up auth using htpasswd etc, in which case you can include the auth in the URL for simplicity if you want.
